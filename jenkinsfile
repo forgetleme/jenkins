@@ -11,10 +11,10 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-				script {
-					echo 'Hello World'
-					tools.PrintMsg("library")
-				}
+		script {
+			echo 'Hello World'
+			tools.PrintMsg("library")
+		}
             }
         }
     }
