@@ -19,4 +19,15 @@ pipeline {
         choice choices: ['1', '2', '3'], description: '应用名称', name: 'appName'
         choice choices: ['dev', 'stag', 'release'], description: '部署环境', name: 'env'  
       }
+
+      stages {
+            stage('Hello') {
+                  steps {
+                        //echo 'Hello World'
+                        srcipt {
+                              tools.PrintMes("library test")
+                        }
+                  }
+            }
+      }
 }
