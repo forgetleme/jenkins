@@ -4,14 +4,17 @@
 
 def tools = new org.devops.tools()
 
+
 pipeline {
+    agent any
+
     stages {
         stage('Hello') {
             steps {
-                //echo 'Hello World'
-                srcipt {
-                    tools.PrintMes("library test")
-                }
+				script {
+					echo 'Hello World'
+					tools.PrintMsg("library")
+				}
             }
         }
     }
