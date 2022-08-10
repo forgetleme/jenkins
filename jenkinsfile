@@ -2,10 +2,9 @@
 
 @Library('jenkinslib') _
 
-def tools = new.org.devops.tools()
+def tools = new org.devops.tools()
 
 pipeline {
-
       运行时选项
       options {
         //丢弃旧的构建,保持构建的天数,保持构建的最大个数,去除空白字符
@@ -20,12 +19,4 @@ pipeline {
         choice choices: ['1', '2', '3'], description: '应用名称', name: 'appName'
         choice choices: ['dev', 'stag', 'release'], description: '部署环境', name: 'env'  
       }
-          
-       stages {
-        stage('Hello') {
-            steps {
-                //echo 'Hello World'
-                tools.PrintMes("library test")
-            }
-        }
 }
